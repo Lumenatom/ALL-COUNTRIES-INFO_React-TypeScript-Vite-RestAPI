@@ -4,7 +4,7 @@ import ViewFullInfoCountrie from "./components/ViewFullInfoCountrie/ViewFullInfo
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/All_Countries_Info'>
       <Routes>
         <Route path={"/"} element={<Countries />} />
         <Route
