@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base=/All_Countries_Info/",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
