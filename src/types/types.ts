@@ -1,4 +1,4 @@
-export type ICountryData = {
+export type CountryData = {
   flags: {
     png: string;
   };
@@ -7,4 +7,5 @@ export type ICountryData = {
     official: string;
   };
   population: number;
-}
+  // [key: string]: any;
+};

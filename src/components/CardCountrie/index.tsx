@@ -1,14 +1,13 @@
-import { FC, useEffect, useState } from 'react';
-import { ICountryData } from '../../types/types';
-import './index.scss';
+import { FC, useEffect, useState } from "react";
+import { CountryData } from "../../types/types";
+import "./index.scss";
+import { useNavigate } from "react-router-dom";
 
-const CardCountrie: FC<ICountryData> = ({
-  flags,
-  name,
-  languages,
-  population,
-}) => {
+const CardCountrie: FC<CountryData> = (countrie) => {
+  const { flags, name, languages, population } = countrie;
   const [langueges, setLaungueges] = useState<string[]>([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (languages) {
@@ -17,8 +16,11 @@ const CardCountrie: FC<ICountryData> = ({
     }
   }, [languages]);
 
+  const handleNavigate = (): void => {
+    navigate(`/countrie/${countrie.name.official}`, { state: countrie });
+  };
   return (
-    <div className="wrapperItem" >
+    <div className="wrapperItem" onClick={handleNavigate}>
       <img src={flags.png} alt={name.official} />
       <h2>{name.official}</h2>
       <div className="langueges">

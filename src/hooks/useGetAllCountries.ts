@@ -1,13 +1,13 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { ICountryData } from '../types/types';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { CountryData } from "../types/types";
 
 const useGetAllCountries = () => {
-  const [countries, setCountries] = useState<ICountryData[]>([]);
+  const [countries, setCountries] = useState<CountryData[]>([]);
 
   const getCountriesData = () => {
     axios
-      .get('https://restcountries.com/v3.1/all')
+      .get("https://restcountries.com/v3.1/all")
       .then((res) => setCountries(res.data));
   };
 
